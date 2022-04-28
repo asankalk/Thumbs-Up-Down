@@ -1,0 +1,87 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 50%;
+}
+
+.container {
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.button {
+  position: relative;
+  margin-right: 1rem;
+  padding: 0 4rem;
+  height: 5.6rem;
+  width: 20rem;
+  border: 0;
+  border-radius: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Rubik', sans-serif;
+  font-size: 2rem;
+  box-shadow: 0 1rem 2.5rem -1rem rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+.btn-like {
+  color: #f8f8f8;
+  background-color: #35353a;
+}
+.btn-dislike {
+  color: #f8f8f8;
+  background-color: #35353a;
+}
+.btn-thumb-up,
+.btn-thumb-down {
+  margin-right: 1rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  transition: all 0.2s ease-in-out;
+}
+.button:hover .btn-thumb-up {
+  transform: rotate(360deg);
+  color: #727272;
+  transition: all 0.7s ease-in-out;
+}
+.button:hover .btn-thumb-down {
+  transform: rotate(-360deg);
+  color: #727272;
+  transition: all 0.7s ease-in-out;
+}
+.liked {
+  background-color: #005A9C;
+  color: #fff;
+  animation: buttonPopAnimation 0.7s normal;
+}
+.disliked {
+  background-color: #d1001c;
+  color: #fff;
+  animation: buttonPopAnimation 0.7s normal;
+}
+.button.liked:hover .btn-thumb-up,
+.button.disliked:hover .btn-thumb-down {
+  transform: rotate(360deg);
+  color: #fff;
+}
+
+@keyframes buttonPopAnimation {
+  40% {
+    transform: rotate(-20deg) scale(0.5);
+  }
+  70% {
+    transform: rotate(10deg) scale(1.0);
+  }
+}
